@@ -32,7 +32,15 @@
 //   info.innerHTML += "Orientation: " + window.screen.orientation.type;
 // }
 
-const info = document.getElementById("response");
-window.alert("Hello from JavaScript");
-info.innerHTML = "Confirm: " + window.confirm("Go or Stop?");
-info.innerHTML += "<br>Prompt: " + window.prompt("Yes or No?", "Yes");
+// const info = document.getElementById("response");
+// window.alert("Hello from JavaScript");
+// info.innerHTML = "Confirm: " + window.confirm("Go or Stop?");
+// info.innerHTML += "<br>Prompt: " + window.prompt("Yes or No?", "Yes");
+
+const info = document.getElementById("info");
+let i = 0;
+for (i = 1; i < 41; i++) {
+  info.innerHTML += i + "<br>";
+}
+window.scrollBy(200, info.clientHeight);
+info.innerHTML += "scrollX: " + window.scrollX + "& scrollY: " + window.scrollY;
