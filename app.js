@@ -37,10 +37,16 @@
 // info.innerHTML = "Confirm: " + window.confirm("Go or Stop?");
 // info.innerHTML += "<br>Prompt: " + window.prompt("Yes or No?", "Yes");
 
-const info = document.getElementById("info");
-let i = 0;
-for (i = 1; i < 41; i++) {
-  info.innerHTML += i + "<br>";
-}
-window.scrollBy(200, info.clientHeight);
-info.innerHTML += "scrollX: " + window.scrollX + "& scrollY: " + window.scrollY;
+// const info = document.getElementById("info");
+// let i = 0;
+// for (i = 1; i < 41; i++) {
+//   info.innerHTML += i + "<br>";
+// }
+// window.scrollBy(200, info.clientHeight);
+// info.innerHTML += "scrollX: " + window.scrollX + "& scrollY: " + window.scrollY;
+
+const popWin = window.open(
+  "index.html",
+  "Popup",
+  "top=150,left=100,width=350,height=100"
+);
