@@ -70,3 +70,12 @@ function countDown() {
   }
 }
 countDown();
+
+const list = document.getElementById("list");
+list.innerHTML = "<li>Browser: " + navigator.appName;
+list.innerHTML += "<li>Code Name: " + navigator.appCodeName;
+list.innerHTML += "<li>Version: " + navigator.appVersion;
+list.innerHTML += "<li>Platform: " + navigator.platform;
+if (window.addEventListener) {
+  list.innerHTML += "<li>This is a modern DOM browser";
+}
