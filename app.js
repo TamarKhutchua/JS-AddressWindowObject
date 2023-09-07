@@ -45,8 +45,28 @@
 // window.scrollBy(200, info.clientHeight);
 // info.innerHTML += "scrollX: " + window.scrollX + "& scrollY: " + window.scrollY;
 
-const popWin = window.open(
-  "index.html",
-  "Popup",
-  "top=150,left=100,width=350,height=100"
-);
+// const popWin = window.open(
+//   "index.html",
+//   "Popup",
+//   "top=150,left=100,width=350,height=100"
+// );
+
+const count = (function () {
+  let num = 10;
+  return function () {
+    return num--;
+  };
+})();
+function countDown() {
+  const info = document.getElementById("infos");
+  let timerId = null;
+  let num = count();
+  if (num > 0) {
+    info.innerHTML += "<span>" + num + "</span>";
+    timerId = window.setTimeout(countDown, 1000);
+  } else {
+    info.innerHTML += "<span>Lift Off!</span>";
+    window.clearTimeout(timerId);
+  }
+}
+countDown();
